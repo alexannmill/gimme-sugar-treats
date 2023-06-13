@@ -15,8 +15,7 @@ import {
 } from "@mui/material";
 import { Cookie, Widgets } from "@mui/icons-material";
 
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = ['Home', 'Treats', 'Contact'];
 
 export default function NavBar() {
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);

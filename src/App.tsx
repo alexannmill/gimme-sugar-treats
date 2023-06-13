@@ -1,9 +1,25 @@
 import React from 'react';
 import NavBar from './Components/NavBar'
 import HomePage from './Components/Home'
+import { makeStyles } from '@mui/material';
+
+
+
+const useStyles = makeStyles({
+ root: {
+  background: '#f48fb1'
+ }
+})
+// #d496b4
+
 function App() {
+  // const classes = useStyles()
+
+  
   return (
-    <div className="App">
+    <div 
+    // className={classes.root}
+    >
       <NavBar />
       <HomePage />
     </div>
