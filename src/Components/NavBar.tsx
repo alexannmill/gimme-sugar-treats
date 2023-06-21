@@ -10,6 +10,7 @@ import {
     MenuItem,
     Container,
     Menu,
+    makeStyles,
     Tooltip,
     Avatar,
 } from "@material-ui/core";
@@ -17,7 +18,32 @@ import { Cake, Widgets } from "@material-ui/icons";
 
 const pages = ['Home', 'Treats', 'Contact'];
 
+const useStyles = makeStyles({
+    typography: {
+        mr: 2,
+        // display: { xs: "none", md: "flex" },
+        fontFamily: "monospace",
+        fontWeight: 700,
+        letterSpacing: ".3rem",
+        color: "inherit",
+        textDecoration: "none",
+            
+    },
+    box: {
+        flexGrow: 1,
+        display: '{ xs: "none", md: "flex" },'
+    },
+    btn: { 
+        my: 2, color: "white", display: "block" 
+    },
+    icon: { 
+        // display: '{ xs: "flex", md: "none" }, mr: 1 }'
+   }
+})
 export default function NavBar() {
+
+    const classes= useStyles()
+
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -32,32 +58,18 @@ export default function NavBar() {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    {/* <AdbIcon
-                        sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-                    /> */}
                     <Typography
                         variant="h6"
                         noWrap
                         component="a"
                         href="/"
-                        // sx={{
-                        //     mr: 2,
-                        //     display: { xs: "none", md: "flex" },
-                        //     fontFamily: "monospace",
-                        //     fontWeight: 700,
-                        //     letterSpacing: ".3rem",
-                        //     color: "inherit",
-                        //     textDecoration: "none",
-                        // }}
+                        className={classes.typography}
                     >
                         LOGO
                     </Typography>
 
                     <Box
-                        sx={{
-                            flexGrow: 1,
-                            display: { xs: "flex", md: "none" },
-                        }}
+                        className={classes.box}
                     >
                         <IconButton
                             // size="large"
@@ -100,37 +112,26 @@ export default function NavBar() {
                         </Menu>
                     </Box>
                     <Cake
-                        // sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+                    className={classes.icon}
                     />
                     <Typography
-                        // variant="h5"
+                        variant="h5"
                         noWrap
-                        // component="a"
-                        // href=""
-                        // sx={{
-                        //     mr: 2,
-                        //     display: { xs: "flex", md: "none" },
-                        //     flexGrow: 1,
-                        //     fontFamily: "monospace",
-                        //     fontWeight: 700,
-                        //     letterSpacing: ".3rem",
-                        //     color: "inherit",
-                        //     textDecoration: "none",
-                        // }}
+                        component="a"
+                        href=""
+                        className={classes.typography}
                     >
                         GIMME SUGAR TREATS
                     </Typography>
                     <Box
-                        sx={{
-                            flexGrow: 1,
-                            display: { xs: "none", md: "flex" },
-                        }}
+                    className={classes.box}
+                    
                     >
                         {pages.map((page) => (
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                // sx={{ my: 2, color: "white", display: "block" }}
+                                className={classes.btn}
                             >
                                 {page}
                             </Button>
