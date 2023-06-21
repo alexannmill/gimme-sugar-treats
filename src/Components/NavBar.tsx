@@ -12,8 +12,8 @@ import {
     Menu,
     Tooltip,
     Avatar,
-} from "@mui/material";
-import { Cookie, Widgets } from "@mui/icons-material";
+} from "@material-ui/core";
+import { Cake, Widgets } from "@material-ui/icons";
 
 const pages = ['Home', 'Treats', 'Contact'];
 
@@ -40,15 +40,15 @@ export default function NavBar() {
                         noWrap
                         component="a"
                         href="/"
-                        sx={{
-                            mr: 2,
-                            display: { xs: "none", md: "flex" },
-                            fontFamily: "monospace",
-                            fontWeight: 700,
-                            letterSpacing: ".3rem",
-                            color: "inherit",
-                            textDecoration: "none",
-                        }}
+                        // sx={{
+                        //     mr: 2,
+                        //     display: { xs: "none", md: "flex" },
+                        //     fontFamily: "monospace",
+                        //     fontWeight: 700,
+                        //     letterSpacing: ".3rem",
+                        //     color: "inherit",
+                        //     textDecoration: "none",
+                        // }}
                     >
                         LOGO
                     </Typography>
@@ -60,7 +60,7 @@ export default function NavBar() {
                         }}
                     >
                         <IconButton
-                            size="large"
+                            // size="large"
                             aria-label="account of current user"
                             aria-controls="menu-appbar"
                             aria-haspopup="true"
@@ -83,40 +83,40 @@ export default function NavBar() {
                             }}
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
-                            sx={{
-                                display: { xs: "block", md: "none" },
-                            }}
+                            // sx={{
+                            //     display: { xs: "block", md: "none" },
+                            // }}
                         >
                             {pages.map((page) => (
                                 <MenuItem
                                     key={page}
                                     onClick={handleCloseNavMenu}
                                 >
-                                    <Typography textAlign="center">
+                                    <Typography >
                                         {page}
                                     </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
                     </Box>
-                    <Cookie
-                        sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+                    <Cake
+                        // sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
                     />
                     <Typography
-                        variant="h5"
+                        // variant="h5"
                         noWrap
-                        component="a"
-                        href=""
-                        sx={{
-                            mr: 2,
-                            display: { xs: "flex", md: "none" },
-                            flexGrow: 1,
-                            fontFamily: "monospace",
-                            fontWeight: 700,
-                            letterSpacing: ".3rem",
-                            color: "inherit",
-                            textDecoration: "none",
-                        }}
+                        // component="a"
+                        // href=""
+                        // sx={{
+                        //     mr: 2,
+                        //     display: { xs: "flex", md: "none" },
+                        //     flexGrow: 1,
+                        //     fontFamily: "monospace",
+                        //     fontWeight: 700,
+                        //     letterSpacing: ".3rem",
+                        //     color: "inherit",
+                        //     textDecoration: "none",
+                        // }}
                     >
                         GIMME SUGAR TREATS
                     </Typography>
@@ -130,7 +130,7 @@ export default function NavBar() {
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: "white", display: "block" }}
+                                // sx={{ my: 2, color: "white", display: "block" }}
                             >
                                 {page}
                             </Button>

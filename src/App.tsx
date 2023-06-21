@@ -1,8 +1,7 @@
 import React from 'react';
 import NavBar from './Components/NavBar'
 import HomePage from './Components/Home'
-import { makeStyles } from '@mui/material';
-
+import { makeStyles } from '@material-ui/core'
 
 
 const useStyles = makeStyles({
@@ -13,12 +12,12 @@ const useStyles = makeStyles({
 // #d496b4
 
 function App() {
-  // const classes = useStyles()
+  const classes = useStyles()
 
   
   return (
     <div 
-    // className={classes.root}
+    className={classes.root}
     >
       <NavBar />
       <HomePage />
