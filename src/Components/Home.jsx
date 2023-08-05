@@ -1,50 +1,47 @@
 import React from 'react';
-import { Container, Grid, Typography, makeStyles } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
+import styled from 'styled-components';
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-		marginTop: theme.spacing(4),
-	},
-	imageContainer: {
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'center',
-		height: '100%',
-	},
-	image: {
-		maxWidth: '100%',
-		maxHeight: '100%',
-	},
-	writeupContainer: {
-		padding: theme.spacing(4),
-	},
-}));
+const LandingContainer = styled(Container)`
+	margin-top: 2rem;
+`;
 
-const Home = () => {
-	const classes = useStyles();
+const ImageContainer = styled(Grid)`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+`;
 
+const Image = styled.img`
+	max-width: 100%;
+	max-height: 100%;
+`;
+
+const WriteupContainer = styled(Grid)`
+	padding: 2rem;
+`;
+
+const App = () => {
 	return (
-		<Container className={classes.root}>
+		<LandingContainer>
 			<Grid container spacing={4}>
-				<Grid item xs={12} sm={6} className={classes.imageContainer}>
-					<img
-						// src='path/to/your/image.jpg'
-						alt='landing-img'
-						className={classes.image}
-					/>
-				</Grid>
-				<Grid item xs={12} sm={6} className={classes.writeupContainer}>
+				<ImageContainer item xs={12} sm={6}>
+					<Image src='path/to/your/image.jpg' alt='Image' />
+				</ImageContainer>
+				<WriteupContainer item xs={12} sm={6}>
 					<Typography variant='h4' component='h1' gutterBottom>
-						Hi Friends!
+						Your Heading
 					</Typography>
 					<Typography variant='body1'>
-						I wanted to start off with a bit about myself... I am a Cordon Bleu
-						trained Pastry Chef recently turned mom
+						Your write-up text goes here. This is where you can describe your
+						product, service, or any other information you want to display on
+						the landing page.
 					</Typography>
-				</Grid>
+				</WriteupContainer>
 			</Grid>
-		</Container>
+		</LandingContainer>
 	);
 };
 
-export default Home;
+export default App;
