@@ -7,7 +7,7 @@ const NavBar = () => {
 		<AppBar position='static'>
 			<Toolbar>
 				<Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-					Bakery Website
+					GIMMIE SUGAR TREATS
 				</Typography>
 				<Button color='inherit' component={Link} to='/'>
 					Home
