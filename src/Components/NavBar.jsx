@@ -10,7 +10,7 @@ import {
 	IconButton,
 	Box,
 } from '@mui/material';
-import { List } from '@mui/icons-material';
+import { Facebook, Instagram, List } from '@mui/icons-material';
 
 const NavBar = () => {
 	const [anchorEl, setAnchorEl] = useState(null);
@@ -27,16 +27,28 @@ const NavBar = () => {
 	const renderMenu = (
 		<Menu anchorEl={anchorEl} open={isMenuOpen} onClose={handleMenuClose}>
 			<MenuItem component={Link} to='/'>
-				Home
+				HOME
 			</MenuItem>
 			<MenuItem component={Link} to='/about'>
-				About
+				ABOUT
 			</MenuItem>
 			<MenuItem component={Link} to='/contact'>
-				Contact
+				CONTACT
 			</MenuItem>
 			<MenuItem component={Link} to='/menu'>
-				Menu
+				MENU
+			</MenuItem>
+			<MenuItem
+				component={Link}
+				to='https://www.instagram.com/gimmesugartreats'
+			>
+				<Instagram />
+			</MenuItem>
+			<MenuItem
+				component={Link}
+				to='https://www.facebook.com/groups/gimmesugarhomebakery'
+			>
+				<Facebook />
 			</MenuItem>
 		</Menu>
 	);
@@ -71,6 +83,20 @@ const NavBar = () => {
 					</Button>
 					<Button color='inherit' component={Link} to='/menu'>
 						Menu
+					</Button>
+					<Button
+						color='inherit'
+						component={Link}
+						to='https://www.instagram.com/gimmesugartreats'
+					>
+						<Instagram />
+					</Button>
+					<Button
+						color='inherit'
+						component={Link}
+						to='https://www.facebook.com/groups/gimmesugarhomebakery'
+					>
+						<Facebook />
 					</Button>
 				</Box>
 			</Toolbar>
