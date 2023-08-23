@@ -5,18 +5,21 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import Menu from './Components/Menu';
 import NavBar from './Components/NavBar';
-
+import theme from './Styles/theme';
+import { ThemeProvider } from '@mui/material';
 const App = () => {
 	return (
 		<Router>
-			<NavBar />
+			<ThemeProvider theme={theme}>
+				<NavBar />
 
-			<Routes>
-				<Route path='/' element={<Home />} />
-				<Route path='/about' element={<About />} />
-				<Route path='/contact' element={<Contact />} />
-				<Route path='/menu' element={<Menu />} />
-			</Routes>
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route path='/about' element={<About />} />
+					<Route path='/contact' element={<Contact />} />
+					<Route path='/menu' element={<Menu />} />
+				</Routes>
+			</ThemeProvider>
 		</Router>
 	);
 };

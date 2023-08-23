@@ -9,10 +9,12 @@ import {
 	MenuItem,
 	IconButton,
 	Box,
+	useTheme,
 } from '@mui/material';
 import { Facebook, Instagram, List } from '@mui/icons-material';
 
 const NavBar = () => {
+	const theme = useTheme();
 	const [anchorEl, setAnchorEl] = useState(null);
 	const isMenuOpen = Boolean(anchorEl);
 
@@ -54,7 +56,13 @@ const NavBar = () => {
 	);
 
 	return (
-		<AppBar position='static'>
+		<AppBar
+			position='static'
+			sx={{
+				borderBottomLeftRadius: theme.spacing(1),
+				borderBottomRightRadius: theme.spacing(1),
+			}}
+		>
 			<Toolbar>
 				<Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
 					GIMMIE SUGAR TREATS
