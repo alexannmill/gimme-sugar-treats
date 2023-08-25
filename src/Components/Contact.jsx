@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Typography, TextField, Button } from '@mui/material';
+import theme from '../Styles/theme';
 
 const Contact = () => {
 	const [formData, setFormData] = useState({
@@ -59,43 +60,61 @@ const Contact = () => {
 
 	return (
 		<Container maxWidth='sm'>
+			<br />
 			<Typography variant='h4' gutterBottom>
 				Contact Us
 			</Typography>
-			<form onSubmit={() => setSubmitted(true)} method='POST' target='_blank'>
-				<TextField
-					label='Name'
-					name='name'
-					value={formData.name}
-					onChange={handleChange}
-					fullWidth
-					margin='normal'
-					required
-				/>
-				<TextField
-					label='Email'
-					name='email'
-					value={formData.email}
-					onChange={handleChange}
-					fullWidth
-					margin='normal'
-					required
-				/>
-				<TextField
-					label='Message'
-					name='message'
-					value={formData.message}
-					onChange={handleChange}
-					fullWidth
-					margin='normal'
-					multiline
-					rows={4}
-					required
-				/>
-				<Button type='submit' variant='contained' color='primary'>
-					Submit
-				</Button>
-			</form>
+			{!submitted ? (
+				<>
+					<Typography>
+						Have a question or want to place an order? Please fill out the form
+						below!
+					</Typography>
+					<br />
+					<Typography variant='p'>
+						* If you are looking for delivery with your order please specify.
+					</Typography>
+					<form onSubmit={sendEmail} method='POST'>
+						<TextField
+							variant='outlined'
+							label='Name'
+							name='name'
+							value={formData.name}
+							onChange={handleChange}
+							fullWidth
+							margin='normal'
+							required
+						/>
+						<TextField
+							label='Email'
+							name='email'
+							type='email'
+							inputProps={{ type: 'email' }}
+							value={formData.email}
+							onChange={handleChange}
+							fullWidth
+							margin='normal'
+							required
+						/>
+						<TextField
+							label='Message'
+							name='message'
+							value={formData.message}
+							onChange={handleChange}
+							fullWidth
+							margin='normal'
+							multiline
+							rows={4}
+							required
+						/>
+						<Button type='submit' variant='contained' color='primary'>
+							Submit
+						</Button>
+					</form>
+				</>
+			) : (
+				<></>
+			)}
 		</Container>
 	);
 };
