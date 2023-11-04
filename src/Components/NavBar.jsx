@@ -28,11 +28,11 @@ const NavBar = () => {
 
 	const renderMenu = (
 		<Menu anchorEl={anchorEl} open={isMenuOpen} onClose={handleMenuClose}>
-			<MenuItem component={Link} to='/'>
+			<MenuItem component={Link} to='/gimme-sugar-treats'>
 				HOME
 			</MenuItem>
-			<MenuItem component={Link} to='/about'>
-				ABOUT
+			<MenuItem component={Link} to='/gallery'>
+				GALLERY
 			</MenuItem>
 			<MenuItem component={Link} to='/contact'>
 				CONTACT
@@ -65,7 +65,7 @@ const NavBar = () => {
 		>
 			<Toolbar>
 				<Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-					GIMMIE SUGAR TREATS
+					GIMME SUGAR TREATS
 				</Typography>
 				<IconButton
 					size='large'
@@ -80,11 +80,11 @@ const NavBar = () => {
 				</IconButton>
 				{renderMenu}
 				<Box sx={{ display: { xs: 'none', md: 'block' } }}>
-					<Button color='inherit' component={Link} to='/'>
+					<Button color='inherit' component={Link} to='/gimme-sugar-treats'>
 						Home
 					</Button>
-					<Button color='inherit' component={Link} to='/about'>
-						About
+					<Button color='inherit' component={Link} to='/gallery'>
+						Gallery
 					</Button>
 					<Button color='inherit' component={Link} to='/contact'>
 						Contact
