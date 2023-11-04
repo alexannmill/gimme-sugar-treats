@@ -7,6 +7,7 @@ import NavBar from './Components/NavBar';
 import theme from './Styles/theme';
 import { ThemeProvider } from '@mui/material';
 import Gallery from './Components/Gallery';
+
 const App = () => {
 	return (
 		<Router>
