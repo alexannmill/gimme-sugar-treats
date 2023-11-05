@@ -14,31 +14,64 @@ const Home = () => {
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
 				width: '100%',
-				padding: '0px',
+				height: '91vh',
+				paddingTop: '1rem',
+				backgroundAttachment: 'fixed',
+				backgroundRepeat: 'no-repeat',
 			}}
 		>
-			{/* <Grid container spacing={4}>
-				<Grid item xs={12} sm={6}> */}
-			<img src={Image} alt='landing-img' />
-			{/* </Grid>
-				<Grid item xs={12} sm={6}> */}
-			<Box
-				display='display'
-				ml='20rem'
-				width='15rem'
-				color='white'
-				position='fixed'
-			>
-				<Typography variant='h4' component='h1' gutterBottom>
-					Hi Friends!
-				</Typography>
-				<Typography variant='body1'>
-					I wanted to start off with a bit about myself... I am a Cordon Bleu
-					trained Pastry Chef recently turned mom.
-				</Typography>
-			</Box>
-			{/* </Grid>
-			</Grid> */}
+			<Grid container spacing={4}>
+				<Grid
+					item
+					xs={12}
+					sm={6}
+					style={{
+						display: 'flex',
+						alignItems: 'center',
+						textAlign: 'center',
+						// padding: '0px',
+					}}
+				>
+					<Box justifyContent='center'>
+						<img
+							src={Image}
+							alt='landing-img'
+							style={{
+								width: '70%',
+								borderRadius: '49% 51% 48% 52% / 52% 48% 51% 49%',
+							}}
+						/>
+					</Box>
+				</Grid>
+				<Grid
+					item
+					xs={12}
+					sm={6}
+					style={{
+						display: 'flex',
+						alignItems: 'center',
+						// padding: '1rem, 0rem',
+					}}
+				>
+					<Box
+						p={3}
+						justifyContent='center'
+						bgcolor='#cb997ea1'
+						borderRadius='2rem'
+					>
+						<Typography variant='h4' component='h1' gutterBottom>
+							Hi Friends!
+						</Typography>
+						<Typography variant='body1'>
+							Wanted to start off with a bit about myself…I am a Cordon Bleu
+							trained Pastry Chef recently turned Mom. I have a passion for
+							hiking, music and food; yet Baking has always been my biggest
+							love. 🤍 I am excited for this adventure and bringing you all for
+							the ride! 💕xo Love and Brownies
+						</Typography>
+					</Box>
+				</Grid>
+			</Grid>
 		</Box>
 	);
 };
