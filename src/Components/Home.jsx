@@ -25,7 +25,7 @@ const Home = () => {
 					item
 					xs={12}
 					sm={6}
-					style={{
+					sx={{
 						display: 'flex',
 						alignItems: 'center',
 						textAlign: 'center',
@@ -58,11 +58,17 @@ const Home = () => {
 						justifyContent='center'
 						bgcolor='#cb997ea1'
 						borderRadius='2rem'
+						// sx={{ marginLeft: { sm: '0rem', md: '3rem' } }}
 					>
-						<Typography variant='h4' component='h1' gutterBottom>
+						<Typography
+							variant='h4'
+							component='h1'
+							color='primary.dark'
+							gutterBottom
+						>
 							Hi Friends!
 						</Typography>
-						<Typography variant='body1'>
+						<Typography variant='body1' color='primary.dark'>
 							Wanted to start off with a bit about myself…I am a Cordon Bleu
 							trained Pastry Chef recently turned Mom. I have a passion for
 							hiking, music and food; yet Baking has always been my biggest

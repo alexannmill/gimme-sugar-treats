@@ -12,7 +12,7 @@ const theme = createTheme({
 		},
 		background: {
 			default: '#ddbea9',
-			paper: '#fde1ef',
+			paper: '#888c7c',
 		},
 	},
 	typography: {
@@ -29,5 +29,4 @@ const theme = createTheme({
 		},
 	},
 });
-
 export default theme;
