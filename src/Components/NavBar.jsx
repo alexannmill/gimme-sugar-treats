@@ -12,6 +12,7 @@ import {
 	useTheme,
 } from '@mui/material';
 import { Facebook, Instagram, List } from '@mui/icons-material';
+import Logo from '../Images/reg-logo.png';
 
 const NavBar = () => {
 	const theme = useTheme();
@@ -61,9 +62,15 @@ const NavBar = () => {
 			sx={{
 				borderBottomLeftRadius: theme.spacing(1),
 				borderBottomRightRadius: theme.spacing(1),
+				height: '8vh',
 			}}
 		>
 			<Toolbar>
+				<img
+					src={Logo}
+					alt='logo'
+					style={{ height: '2.5rem', borderRadius: '50%', marginRight: '1rem' }}
+				/>
 				<Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
 					GIMME SUGAR TREATS
 				</Typography>
