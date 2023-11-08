@@ -14,12 +14,14 @@ const App = () => {
 			<ThemeProvider theme={theme}>
 				<NavBar />
 
-				<Routes>
-					<Route path='/gimme-sugar-treats' element={<Home />} />
-					<Route path='/gallery' element={<Gallery />} />
-					<Route path='/contact' element={<Contact />} />
-					<Route path='/menu' element={<Menu />} />
-				</Routes>
+				<div style={{ backgroundColor: '#e5d2c0', height: '100vh' }}>
+					<Routes>
+						<Route path='/gimme-sugar-treats' element={<Home />} />
+						<Route path='/gallery' element={<Gallery />} />
+						<Route path='/contact' element={<Contact />} />
+						<Route path='/menu' element={<Menu />} />
+					</Routes>
+				</div>
 			</ThemeProvider>
 		</Router>
 	);
