@@ -1,8 +1,17 @@
 import React from 'react';
-import { Box, CardMedia, Container, Grid, Typography } from '@mui/material';
+import {
+	Box,
+	CardMedia,
+	Container,
+	Grid,
+	Typography,
+	useTheme,
+} from '@mui/material';
 import Image from '../Images/home-img.png';
 
 const Home = () => {
+	const theme = useTheme();
+
 	return (
 		<Box
 			sx={{
@@ -14,7 +23,6 @@ const Home = () => {
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
 				width: '100%',
-				height: '91vh',
 				paddingTop: '1rem',
 				backgroundAttachment: 'fixed',
 				backgroundRepeat: 'no-repeat',
@@ -23,52 +31,44 @@ const Home = () => {
 			<Grid container spacing={4}>
 				<Grid
 					item
-					xs={12}
-					sm={6}
+					sm={12}
+					md={6}
 					sx={{
 						display: 'flex',
 						alignItems: 'center',
 						textAlign: 'center',
-						// padding: '0px',
+						padding: '0px',
 					}}
 				>
-					<Box justifyContent='center'>
+					<Box justifyContent='center' margin={2}>
 						<img
 							src={Image}
 							alt='landing-img'
 							style={{
 								width: '70%',
-								borderRadius: '49% 51% 48% 52% / 52% 48% 51% 49%',
 							}}
 						/>
 					</Box>
 				</Grid>
 				<Grid
 					item
-					xs={12}
-					sm={6}
+					sm={12}
+					md={6}
 					style={{
 						display: 'flex',
 						alignItems: 'center',
-						// padding: '1rem, 0rem',
 					}}
 				>
 					<Box
 						p={3}
 						justifyContent='center'
 						bgcolor='#cb997ea1'
-						borderRadius='2rem'
-						// sx={{ marginLeft: { sm: '0rem', md: '3rem' } }}
+						borderRadius='49% 51% 48% 52% / 52% 48% 51% 49%'
 					>
-						<Typography
-							variant='h4'
-							component='h1'
-							color='primary.dark'
-							gutterBottom
-						>
+						<Typography variant='h3' color='primary.dark' gutterBottom>
 							Hi Friends!
 						</Typography>
-						<Typography variant='body1' color='primary.dark'>
+						<Typography variant='h6' color='primary.dark'>
 							Wanted to start off with a bit about myself…I am a Cordon Bleu
 							trained Pastry Chef recently turned Mom. I have a passion for
 							hiking, music and food; yet Baking has always been my biggest

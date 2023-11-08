@@ -4,19 +4,21 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
 	palette: {
 		primary: {
-			// main: '#A5A58D',
 			main: '#6B705C',
+			dark: '#5b6347',
 		},
 		secondary: {
 			main: '#BF4238',
 		},
 		background: {
 			default: '#ddbea9',
-			paper: '#888c7c',
+			// textbox: '#cb997ea1',
+			paper: '#a0a494',
 		},
 	},
 	typography: {
 		fontFamily: `'Playfair Display', serif`,
+
 		h1: {
 			fontSize: '2rem',
 			fontWeight: 'bold',

@@ -9,7 +9,7 @@ const Menu = () => {
 			<img
 				src={MenuImg}
 				alt='current-menu'
-				style={{ width: 'clamp(10rem, 50rem, 50rem)' }}
+				style={{ width: 'clamp(100vw, 100vw, 20rem)' }}
 			/>
 		</div>
 	);
