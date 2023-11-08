@@ -9,13 +9,22 @@ import {
 	MenuItem,
 	IconButton,
 	Box,
-	useTheme,
 } from '@mui/material';
 import { Facebook, Instagram, List } from '@mui/icons-material';
 import Logo from '../Images/reg-logo.png';
 
+//Due to MUI version makeStyle/useStyles with theme arg cannot be used. Need to import the theme for OO styling.
+import theme from '../Styles/theme';
+const classes = {
+	appBar: {
+		borderBottomLeftRadius: theme.spacing(1),
+		borderBottomRightRadius: theme.spacing(1),
+		height: 'clamp(5rem, 8vh)',
+	},
+	logo: { height: '2.5rem', borderRadius: '50%', marginRight: '1rem' },
+};
+
 const NavBar = () => {
-	const theme = useTheme();
 	const [anchorEl, setAnchorEl] = useState(null);
 	const isMenuOpen = Boolean(anchorEl);
 
@@ -57,20 +66,9 @@ const NavBar = () => {
 	);
 
 	return (
-		<AppBar
-			position='static'
-			sx={{
-				borderBottomLeftRadius: theme.spacing(1),
-				borderBottomRightRadius: theme.spacing(1),
-				height: 'clamp(5rem, 8vh)',
-			}}
-		>
+		<AppBar position='static' sx={classes.appBar}>
 			<Toolbar>
-				<img
-					src={Logo}
-					alt='logo'
-					style={{ height: '2.5rem', borderRadius: '50%', marginRight: '1rem' }}
-				/>
+				<img src={Logo} alt='logo' style={classes.logo} />
 				<Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
 					GIMME SUGAR TREATS
 				</Typography>

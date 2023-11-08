@@ -9,6 +9,8 @@ import {
 } from '@mui/material';
 import theme from '../Styles/theme';
 
+
+const classes = {};
 const Contact = () => {
 	const [formData, setFormData] = useState({
 		name: '',
@@ -66,6 +68,21 @@ const Contact = () => {
 	};
 
 	return (
+		// <Box
+		// 	sx={{
+		// 		display: 'flex',
+		// 		alignItems: 'center',
+		// 		justifyContent: 'center',
+		// 		backgroundImage: 'url(' + require('../Images/icing.png') + ')',
+		// 		backgroundColor: 'rgba(255, 255, 255, 0.5)',
+		// 		backgroundSize: 'cover',
+		// 		backgroundPosition: 'center',
+		// 		width: '100%',
+		// 		paddingTop: '1rem',
+		// 		backgroundAttachment: 'fixed',
+		// 		backgroundRepeat: 'no-repeat',
+		// 	}}
+		// >
 		<Container maxWidth='sm'>
 			<br />
 			<Typography variant='h4' gutterBottom>
@@ -124,6 +141,7 @@ const Contact = () => {
 				<></>
 			)}
 		</Container>
+		// </Box>
 	);
 };
 

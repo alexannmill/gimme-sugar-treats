@@ -8,63 +8,54 @@ import {
 	useTheme,
 } from '@mui/material';
 import Image from '../Images/home-img.png';
+import Icing from '../Images/icing.png';
+
+const classes = {
+	container: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		backgroundImage: 'url(' + require('../Images/background.png') + ')',
+		backgroundColor: 'rgba(255, 255, 255, 0.5)',
+		backgroundSize: 'cover',
+		backgroundPosition: 'center',
+		width: '100%',
+		paddingTop: { xs: '15%', sm: '10%', md: '1%' },
+		backgroundAttachment: 'fixed',
+		backgroundRepeat: 'no-repeat',
+		height: '100%',
+	},
+	gridImg: {
+		display: 'flex',
+		alignItems: 'center',
+		textAlign: 'center',
+		justifyContent: 'center',
+	},
+	gridText: {
+		display: 'flex',
+		alignItems: 'center',
+	},
+	textContainer: {
+		justifyContent: 'center',
+		bgcolor: '#cb997ea1',
+		borderRadius: '49% 51% 48% 52% / 52% 48% 51% 49%',
+	},
+	img: {
+		width: '70%',
+	},
+};
 
 const Home = () => {
-	const theme = useTheme();
-
 	return (
-		<Box
-			sx={{
-				display: 'flex',
-				alignItems: 'center',
-				justifyContent: 'center',
-				backgroundImage: 'url(' + require('../Images/background.png') + ')',
-				backgroundColor: 'rgba(255, 255, 255, 0.5)',
-				backgroundSize: 'cover',
-				backgroundPosition: 'center',
-				width: '100%',
-				paddingTop: '1rem',
-				backgroundAttachment: 'fixed',
-				backgroundRepeat: 'no-repeat',
-			}}
-		>
+		<Box sx={classes.container} id='home-container'>
 			<Grid container spacing={4}>
-				<Grid
-					item
-					sm={12}
-					md={6}
-					sx={{
-						display: 'flex',
-						alignItems: 'center',
-						textAlign: 'center',
-						padding: '0px',
-					}}
-				>
+				<Grid item sm={12} md={6} sx={classes.gridImg}>
 					<Box justifyContent='center' margin={2}>
-						<img
-							src={Image}
-							alt='landing-img'
-							style={{
-								width: '70%',
-							}}
-						/>
+						<img src={Image} alt='landing-img' style={classes.img} />
 					</Box>
 				</Grid>
-				<Grid
-					item
-					sm={12}
-					md={6}
-					style={{
-						display: 'flex',
-						alignItems: 'center',
-					}}
-				>
-					<Box
-						p={3}
-						justifyContent='center'
-						bgcolor='#cb997ea1'
-						borderRadius='49% 51% 48% 52% / 52% 48% 51% 49%'
-					>
+				<Grid item sm={12} md={6} sx={classes.gridText}>
+					<Box p={3} sx={classes.textContainer}>
 						<Typography variant='h3' color='primary.dark' gutterBottom>
 							Hi Friends!
 						</Typography>
@@ -76,6 +67,11 @@ const Home = () => {
 							the ride! 💕xo Love and Brownies
 						</Typography>
 					</Box>
+				</Grid>
+				<Grid item xs={12}>
+					{/* <Box>
+						<img src={Icing} />
+					</Box> */}
 				</Grid>
 			</Grid>
 		</Box>
