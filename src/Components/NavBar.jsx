@@ -62,7 +62,7 @@ const NavBar = () => {
 			sx={{
 				borderBottomLeftRadius: theme.spacing(1),
 				borderBottomRightRadius: theme.spacing(1),
-				height: '8vh',
+				height: 'clamp(5rem, 8vh)',
 			}}
 		>
 			<Toolbar>

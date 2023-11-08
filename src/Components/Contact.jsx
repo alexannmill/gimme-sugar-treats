@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { Container, Typography, TextField, Button } from '@mui/material';
+import {
+	Container,
+	Typography,
+	TextField,
+	Button,
+	Box,
+	FormControl,
+} from '@mui/material';
 import theme from '../Styles/theme';
 
 const Contact = () => {
@@ -67,12 +74,13 @@ const Contact = () => {
 			{!submitted ? (
 				<>
 					<Typography>
-						Have a question or want to place an order? Please fill out the form
-						below!
+						Have a question or want to place an order?
+						<br />
+						Please fill out the form below!
 					</Typography>
 					<br />
-					<Typography variant='p'>
-						* If you are looking for delivery with your order please specify.
+					<Typography variant='p' gutterBottom>
+						* $20 delivery, MINIMUM 3 days for an order
 					</Typography>
 					<form onSubmit={sendEmail} method='POST'>
 						<TextField
