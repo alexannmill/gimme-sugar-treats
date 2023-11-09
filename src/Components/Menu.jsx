@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 import React from 'react';
-import MenuImg from '../Images/menu.png';
+import MenuImg from '../Images/Other/menu.png';
 
 const Menu = () => {
 	return (

@@ -8,22 +8,20 @@ import {
 	useTheme,
 } from '@mui/material';
 import Image from '../Images/home-img.png';
-import Icing from '../Images/icing.png';
 
 const classes = {
 	container: {
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		backgroundImage: 'url(' + require('../Images/background.png') + ')',
-		backgroundColor: 'rgba(255, 255, 255, 0.5)',
+		backgroundImage: 'url(' + require('../Images/Other/background.png') + ')',
 		backgroundSize: 'cover',
 		backgroundPosition: 'center',
 		width: '100%',
 		paddingTop: { xs: '15%', sm: '10%', md: '1%' },
 		backgroundAttachment: 'fixed',
 		backgroundRepeat: 'no-repeat',
-		height: '100%',
+		minHeight: '100vh',
 	},
 	gridImg: {
 		display: 'flex',

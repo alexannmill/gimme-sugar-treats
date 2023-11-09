@@ -14,7 +14,7 @@ const App = () => {
 			<ThemeProvider theme={theme}>
 				<NavBar />
 
-				<div style={{ backgroundColor: '#e5d2c0', height: '100vh' }}>
+				<div style={{ backgroundColor: '#e5d2c0', minHeight: '100vh' }}>
 					<Routes>
 						<Route path='/gimme-sugar-treats' element={<Home />} />
 						<Route path='/gallery' element={<Gallery />} />
