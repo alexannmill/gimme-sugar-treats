@@ -35,11 +35,12 @@ const classes = {
 	},
 	textContainer: {
 		justifyContent: 'center',
-		bgcolor: '#cb997ea1',
+		bgcolor: '#ebeae7c2',
 		borderRadius: '49% 51% 48% 52% / 52% 48% 51% 49%',
 	},
 	img: {
 		width: '70%',
+		borderRadius: '1rem',
 	},
 };
 

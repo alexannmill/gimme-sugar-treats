@@ -5,15 +5,16 @@ const theme = createTheme({
 	palette: {
 		primary: {
 			main: '#6B705C',
-			dark: '#5b6347',
+			dark: '#494e3c',
+			// dark: '#5b6347',
 		},
 		secondary: {
-			main: '#BF4238',
+			main: '#582F0E',
 		},
 		background: {
 			default: '#ddbea9',
 			// textbox: '#cb997ea1',
-			paper: '#a0a494',
+			paper: '#9d9e97fa',
 		},
 	},
 	typography: {
