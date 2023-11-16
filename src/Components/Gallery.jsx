@@ -23,12 +23,10 @@ const Gallery = () => {
 
 	return (
 		<div>
-			<Typography variant='h1'>GALLERY</Typography>
-			<ImageList
-				variant='masonry'
-				cols={{ xs: 2, sm: 4, md: 6, lg: 8 }}
-				rowHeight='20vh'
-			>
+			<Typography variant='h1' color='secondary' gutterBottom align='center'>
+				GALLERY
+			</Typography>
+			<ImageList variant='masonry' cols={3} gap={8}>
 				{itemData.map((item) => (
 					<ImageListItem key={item.img}>
 						<img
