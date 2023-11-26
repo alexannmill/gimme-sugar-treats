@@ -24,6 +24,7 @@ const Menu = () => {
 				alt='current-menu'
 				style={{
 					width: 'clamp(80vw, 80vw, 20rem)',
+					borderRadius: '1rem',
 				}}
 			/>
 		</Box>

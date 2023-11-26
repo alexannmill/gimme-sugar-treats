@@ -58,7 +58,7 @@ const Home = () => {
 						<Typography variant='h3' color='primary.dark' gutterBottom>
 							Hi Friends!
 						</Typography>
-						<Typography variant='h6' color='primary.dark'>
+						<Typography variant='h6' color='secondary.dark'>
 							Wanted to start off with a bit about myself…I am a Cordon Bleu
 							trained Pastry Chef recently turned Mom. I have a passion for
 							hiking, music and food; yet Baking has always been my biggest

@@ -33,6 +33,7 @@ const Gallery = () => {
 							src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
 							alt={item.title}
 							loading='lazy'
+							style={{ borderRadius: '1rem' }}
 						/>
 					</ImageListItem>
 				))}
