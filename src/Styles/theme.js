@@ -13,12 +13,11 @@ const theme = createTheme({
 		},
 		background: {
 			default: '#ddbea9',
-			// textbox: '#cb997ea1',
-			paper: '#9d9e97fa',
+			paper: '#6B705C',
 		},
 	},
 	typography: {
-		fontFamily: `'Playfair Display', serif`,
+		fontFamily: `'Merriweather', serif;`,
 
 		h1: {
 			fontSize: '2rem',

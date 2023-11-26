@@ -22,6 +22,14 @@ const classes = {
 		height: 'clamp(5rem, 8vh)',
 	},
 	logo: { height: '2.5rem', borderRadius: '50%', marginRight: '1rem' },
+	menuDropDown: {
+		backgroundColor: theme.palette.primary,
+		borderBottomLeftRadius: theme.spacing(1),
+		borderBottomRightRadius: theme.spacing(1),
+		borderTopRightRadius: theme.spacing(0),
+		borderTopLeftRadius: theme.spacing(0),
+		color: 'white',
+	},
 };
 
 const NavBar = () => {
@@ -37,18 +45,23 @@ const NavBar = () => {
 	};
 
 	const renderMenu = (
-		<Menu anchorEl={anchorEl} open={isMenuOpen} onClose={handleMenuClose}>
+		<Menu
+			anchorEl={anchorEl}
+			open={isMenuOpen}
+			onClose={handleMenuClose}
+			slotProps={{ paper: { style: classes.menuDropDown } }}
+		>
 			<MenuItem component={Link} to='/gimme-sugar-treats'>
 				HOME
+			</MenuItem>
+			<MenuItem component={Link} to='/menu'>
+				MENU
 			</MenuItem>
 			<MenuItem component={Link} to='/gallery'>
 				GALLERY
 			</MenuItem>
 			<MenuItem component={Link} to='/contact'>
 				CONTACT
-			</MenuItem>
-			<MenuItem component={Link} to='/menu'>
-				MENU
 			</MenuItem>
 			<MenuItem
 				component={Link}
@@ -88,14 +101,14 @@ const NavBar = () => {
 					<Button color='inherit' component={Link} to='/gimme-sugar-treats'>
 						Home
 					</Button>
+					<Button color='inherit' component={Link} to='/menu'>
+						Menu
+					</Button>
 					<Button color='inherit' component={Link} to='/gallery'>
 						Gallery
 					</Button>
 					<Button color='inherit' component={Link} to='/contact'>
 						Contact
-					</Button>
-					<Button color='inherit' component={Link} to='/menu'>
-						Menu
 					</Button>
 					<Button
 						color='inherit'
