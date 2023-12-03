@@ -1,14 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './Components/Home';
-import Contact from './Components/Contact';
-import Menu from './Components/Menu';
+import { BrowserRouter as Router } from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import theme from './Styles/theme';
 import { ThemeProvider } from '@mui/material';
-import Gallery from './Components/Gallery';
+import AnimatedRoutes from './Context/AnimatedRoutes';
 
 const App = () => {
+	console.log('window.location.url:', window.location.pathname);
 	return (
 		<Router>
 			<ThemeProvider theme={theme}>
@@ -16,17 +14,10 @@ const App = () => {
 					style={{
 						backgroundColor: '#e5d2c0',
 						minHeight: '100vh',
-						// padding: '5%',
 					}}
 				>
 					<NavBar />
-
-					<Routes>
-						<Route path='/gimme-sugar-treats' element={<Home />} />
-						<Route path='/gallery' element={<Gallery />} />
-						<Route path='/contact' element={<Contact />} />
-						<Route path='/menu' element={<Menu />} />
-					</Routes>
+					<AnimatedRoutes />
 				</main>
 			</ThemeProvider>
 		</Router>
