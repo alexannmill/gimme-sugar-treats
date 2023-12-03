@@ -20,6 +20,8 @@ const classes = {
 		borderBottomLeftRadius: theme.spacing(1),
 		borderBottomRightRadius: theme.spacing(1),
 		height: 'clamp(5rem, 8vh)',
+		// position: 'fixed',
+		zIndex: '100',
 	},
 	logo: { height: '2.5rem', borderRadius: '50%', marginRight: '1rem' },
 	menuDropDown: {
@@ -79,7 +81,7 @@ const NavBar = () => {
 	);
 
 	return (
-		<AppBar position='static' sx={classes.appBar}>
+		<AppBar position='sticky' sx={classes.appBar}>
 			<Toolbar>
 				<img src={Logo} alt='logo' style={classes.logo} />
 				<Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
