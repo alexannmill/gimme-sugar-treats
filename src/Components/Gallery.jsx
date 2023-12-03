@@ -45,7 +45,7 @@ const Gallery = () => {
 
 	return (
 		<Box p='5%'>
-			<Typography variant='h1' color='secondary' gutterBottom align='center'>
+			<Typography variant='h1' color='secondary' gutterBottom>
 				GALLERY
 			</Typography>
 			<ImageList variant='masonry' cols={numberOfColumns} gap={10}>

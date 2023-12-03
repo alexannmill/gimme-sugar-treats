@@ -93,17 +93,12 @@ const Contact = () => {
 				padding: '5%',
 			}}
 		>
-			<Typography variant='h1' color='white' align='center'>
-				Contact Me
+			<Typography variant='h1' color='white'>
+				Contact
 			</Typography>
-			<Grid container sx={{ padding: '10%' }}>
+			<Grid container>
 				<br />
-				<Grid
-					item
-					xs={12}
-					sm={6}
-					sx={{ alignSelf: 'center', justifyContent: 'center' }}
-				>
+				<Grid item xs={12} sm={6} sx={{ alignSelf: 'center' }}>
 					<Typography variant='h6' color='white'>
 						Have a question or want to place an order?
 					</Typography>
