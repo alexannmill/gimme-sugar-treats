@@ -20,7 +20,7 @@ const theme = createTheme({
 		fontFamily: `'Merriweather', serif`,
 
 		h1: {
-			fontSize: '2rem',
+			fontSize: '3rem',
 			fontWeight: 'bold',
 			marginBottom: '1rem',
 		},
@@ -28,6 +28,15 @@ const theme = createTheme({
 			fontSize: '1.5rem',
 			fontWeight: 'bold',
 			marginBottom: '1rem',
+		},
+	},
+	components: {
+		MuiInputBase: {
+			styleOverrides: {
+				root: {
+					backgroundColor: '#899171',
+				},
+			},
 		},
 	},
 });
