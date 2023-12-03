@@ -6,7 +6,6 @@ import { ThemeProvider } from '@mui/material';
 import AnimatedRoutes from './Context/AnimatedRoutes';
 
 const App = () => {
-	console.log('window.location.url:', window.location.pathname);
 	return (
 		<Router>
 			<ThemeProvider theme={theme}>
