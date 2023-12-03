@@ -8,7 +8,7 @@ import {
 	FormControl,
 	Grid,
 } from '@mui/material';
-import Icing from '../Images/icing.png';
+import Image from '../Images/Other/contact-bg.jpg';
 
 const classes = {};
 const Contact = () => {
@@ -69,23 +69,24 @@ const Contact = () => {
 
 	return (
 		<Box
-			sx={
-				{
-					// display: 'flex',
-					// alignItems: 'center',
-					// justifyContent: 'center',
-					// backgroundImage: 'url(' + require('../Images/fade-logo.png') + ')',
-					// // backgroundColor: 'rgba(255, 255, 255, 0.5)',
-					// backgroundSize: 'cover',
-					// backgroundPosition: 'center',
-					// width: '100%',
-					// paddingTop: '1rem',
-					// backgroundAttachment: 'fixed',
-					// backgroundRepeat: 'no-repeat',
-					// height: 'inherit',
-				}
-			}
+			sx={{
+				alignItems: 'center',
+				justifyContent: 'center',
+				backgroundImage:
+					'url(' + require('../Images/Other/contact-bg.jpg') + ')',
+				backgroundSize: 'cover',
+				backgroundPosition: 'center',
+				width: '100%',
+				paddingTop: '1rem',
+				backgroundAttachment: 'fixed',
+				backgroundRepeat: 'no-repeat',
+				height: 'inherit',
+				minHeight: '100vh',
+			}}
 		>
+			<Typography variant='h4' color='white' align='center'>
+				Contact Me
+			</Typography>
 			<Grid container sx={{ padding: '10%' }}>
 				<br />
 				<Grid
@@ -94,17 +95,11 @@ const Contact = () => {
 					sm={6}
 					sx={{ alignSelf: 'center', justifyContent: 'center' }}
 				>
-					<Typography variant='h4' gutterBottom>
-						Contact Me
-					</Typography>
-
-					<Typography>
+					<Typography variant='h6' color='white'>
 						Have a question or want to place an order?
-						<br />
-						Please fill out the form below!
 					</Typography>
 					<br />
-					<Typography variant='p' gutterBottom>
+					<Typography variant='p' color='white' gutterBottom>
 						* $20 delivery, MINIMUM 3 days for an order
 					</Typography>
 				</Grid>
@@ -148,7 +143,6 @@ const Contact = () => {
 					</form>
 				</Grid>
 			</Grid>
-			<img src={Icing} />
 		</Box>
 	);
 };

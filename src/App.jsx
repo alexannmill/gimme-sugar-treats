@@ -12,16 +12,22 @@ const App = () => {
 	return (
 		<Router>
 			<ThemeProvider theme={theme}>
-				<NavBar />
+				<main
+					style={{
+						backgroundColor: '#e5d2c0',
+						minHeight: '100vh',
+						// padding: '5%',
+					}}
+				>
+					<NavBar />
 
-				<div style={{ backgroundColor: '#e5d2c0', minHeight: '100vh' }}>
 					<Routes>
 						<Route path='/gimme-sugar-treats' element={<Home />} />
 						<Route path='/gallery' element={<Gallery />} />
 						<Route path='/contact' element={<Contact />} />
 						<Route path='/menu' element={<Menu />} />
 					</Routes>
-				</div>
+				</main>
 			</ThemeProvider>
 		</Router>
 	);

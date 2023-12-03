@@ -17,7 +17,7 @@ const theme = createTheme({
 		},
 	},
 	typography: {
-		fontFamily: `'Merriweather', serif;`,
+		fontFamily: `'Merriweather', serif`,
 
 		h1: {
 			fontSize: '2rem',
