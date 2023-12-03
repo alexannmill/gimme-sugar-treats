@@ -7,7 +7,7 @@ import {
 	Typography,
 	useTheme,
 } from '@mui/material';
-import Image from '../Images/home-img.png';
+// import Image from '../Images/home-img.png';
 
 const classes = {
 	container: {
