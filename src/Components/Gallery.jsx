@@ -48,14 +48,17 @@ const Gallery = () => {
 			<Typography variant='h1' color='secondary' gutterBottom align='center'>
 				GALLERY
 			</Typography>
-			<ImageList variant='masonry' cols={numberOfColumns} gap={8}>
+			<ImageList variant='masonry' cols={numberOfColumns} gap={10}>
 				{itemData.map((item) => (
 					<ImageListItem key={item.img}>
 						<img
 							src={`${item.img}?w=164&fit=crop&auto=format`}
 							alt={item.title}
 							loading='lazy'
-							style={{ borderRadius: '1rem' }}
+							style={{
+								borderRadius: '1rem',
+								boxShadow: '0 0 2px 1px #9d8981',
+							}}
 						/>
 					</ImageListItem>
 				))}

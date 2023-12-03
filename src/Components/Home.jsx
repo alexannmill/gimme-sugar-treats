@@ -37,10 +37,13 @@ const classes = {
 		justifyContent: 'center',
 		bgcolor: '#ebeae7c2',
 		borderRadius: '49% 51% 48% 52% / 52% 48% 51% 49%',
+		boxShadow: '0 0 20px 10px #9d8981',
 	},
 	img: {
 		width: '70%',
 		borderRadius: '1rem',
+		overflow: 'hidden',
+		boxShadow: '0 0 20px 10px #9d8981',
 	},
 };
 
