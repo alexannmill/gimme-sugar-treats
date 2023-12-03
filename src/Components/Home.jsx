@@ -53,7 +53,11 @@ const Home = () => {
 			<Grid container spacing={4}>
 				<Grid item sm={12} md={6} sx={classes.gridImg}>
 					<Box justifyContent='center' margin={2}>
-						<img src={Image} alt='landing-img' style={classes.img} />
+						<img
+							src={'../Images/home-img.png'}
+							alt='landing-img'
+							style={classes.img}
+						/>
 					</Box>
 				</Grid>
 				<Grid item sm={12} md={6} sx={classes.gridText}>
