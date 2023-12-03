@@ -7,10 +7,19 @@ import {
 	Box,
 	FormControl,
 	Grid,
+	Paper,
+	FormLabel,
 } from '@mui/material';
 import Image from '../Images/Other/contact-bg.jpg';
 
-const classes = {};
+const classes = {
+	textBoxes: {
+		color: 'white',
+	},
+	textField: {
+		backgroundColor: '#e7e4e4',
+	},
+};
 const Contact = () => {
 	const [formData, setFormData] = useState({
 		name: '',
@@ -76,15 +85,15 @@ const Contact = () => {
 					'url(' + require('../Images/Other/contact-bg.jpg') + ')',
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
-				width: '100%',
 				paddingTop: '1rem',
 				backgroundAttachment: 'fixed',
 				backgroundRepeat: 'no-repeat',
 				height: 'inherit',
 				minHeight: '100vh',
+				padding: '5%',
 			}}
 		>
-			<Typography variant='h4' color='white' align='center'>
+			<Typography variant='h1' color='white' align='center'>
 				Contact Me
 			</Typography>
 			<Grid container sx={{ padding: '10%' }}>
@@ -105,29 +114,33 @@ const Contact = () => {
 				</Grid>
 				<Grid item xs={12} sm={6}>
 					<form onSubmit={sendEmail} method='POST'>
+						<FormLabel style={classes.textBoxes}>Name</FormLabel>
 						<TextField
 							variant='outlined'
-							label='Name'
 							name='name'
 							value={formData.name}
 							onChange={handleChange}
 							fullWidth
 							margin='normal'
 							required
+							className={classes.textField}
+							inputProps={{ style: classes.textBoxes }}
 						/>
+						<br />
+						<FormLabel style={classes.textBoxes}>Email</FormLabel>
 						<TextField
-							label='Email'
 							name='email'
 							type='email'
-							inputProps={{ type: 'email' }}
+							inputProps={{ type: 'email', style: classes.textBoxes }}
 							value={formData.email}
 							onChange={handleChange}
 							fullWidth
 							margin='normal'
 							required
 						/>
+						<br />
+						<FormLabel style={classes.textBoxes}>Message</FormLabel>
 						<TextField
-							label='Message'
 							name='message'
 							value={formData.message}
 							onChange={handleChange}
@@ -136,10 +149,13 @@ const Contact = () => {
 							multiline
 							rows={4}
 							required
+							inputProps={{ style: classes.textBoxes }}
 						/>
-						<Button type='submit' variant='contained' color='primary'>
-							Submit
-						</Button>
+						<Box textAlign='right'>
+							<Button type='submit' variant='contained' color='primary'>
+								Submit
+							</Button>
+						</Box>
 					</form>
 				</Grid>
 			</Grid>

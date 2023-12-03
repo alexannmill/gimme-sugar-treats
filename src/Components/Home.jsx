@@ -17,11 +17,11 @@ const classes = {
 		backgroundImage: 'url(' + require('../Images/Other/background.png') + ')',
 		backgroundSize: 'cover',
 		backgroundPosition: 'center',
-		width: '100%',
 		paddingTop: { xs: '15%', sm: '10%', md: '1%' },
 		backgroundAttachment: 'fixed',
 		backgroundRepeat: 'no-repeat',
 		minHeight: '100vh',
+		padding: '5%',
 	},
 	gridImg: {
 		display: 'flex',
@@ -62,16 +62,15 @@ const Home = () => {
 							Wanted to start off with a bit about myself…I am a Cordon Bleu
 							trained Pastry Chef recently turned Mom. I have a passion for
 							hiking, music and food; yet Baking has always been my biggest
-							love. 🤍 I am excited for this adventure and bringing you all for
-							the ride! 💕xo Love and Brownies
+							love. ❤️ I am excited for this adventure and bringing you all for
+							the ride! 💕
+							<br />
+							<br />
+							xo Love and Brownies
 						</Typography>
 					</Box>
 				</Grid>
-				<Grid item xs={12}>
-					{/* <Box>
-						<img src={Icing} />
-					</Box> */}
-				</Grid>
+				<Grid item xs={12}></Grid>
 			</Grid>
 		</Box>
 	);
