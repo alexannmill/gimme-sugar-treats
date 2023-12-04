@@ -4,20 +4,23 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
 	palette: {
 		primary: {
-			main: '#7c4d74', // Customize your primary color
+			main: '#6B705C',
+			dark: '#494e3c',
+			// dark: '#5b6347',
 		},
 		secondary: {
-			main: '#4c7846', // Customize your secondary color
+			main: '#582F0E',
 		},
 		background: {
-			default: '#fde1ef',
-			paper: '#fde1ef',
+			default: '#ddbea9',
+			paper: '#6B705C',
 		},
 	},
 	typography: {
-		fontFamily: `'Playfair Display', serif`,
+		fontFamily: `'Merriweather', serif`,
+
 		h1: {
-			fontSize: '2rem',
+			fontSize: '3rem',
 			fontWeight: 'bold',
 			marginBottom: '1rem',
 		},
@@ -26,8 +29,15 @@ const theme = createTheme({
 			fontWeight: 'bold',
 			marginBottom: '1rem',
 		},
-		// Add more typography styles as needed
+	},
+	components: {
+		MuiInputBase: {
+			styleOverrides: {
+				root: {
+					backgroundColor: '#899171',
+				},
+			},
+		},
 	},
 });
-
 export default theme;

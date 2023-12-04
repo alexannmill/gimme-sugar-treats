@@ -1,24 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './Components/Home';
-import About from './Components/About';
-import Contact from './Components/Contact';
-import Menu from './Components/Menu';
+import { BrowserRouter as Router } from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import theme from './Styles/theme';
 import { ThemeProvider } from '@mui/material';
+import AnimatedRoutes from './Context/AnimatedRoutes';
+
 const App = () => {
 	return (
-		<Router>
+		<Router basename=''>
 			<ThemeProvider theme={theme}>
-				<NavBar />
-
-				<Routes>
-					<Route path='/' element={<Home />} />
-					<Route path='/about' element={<About />} />
-					<Route path='/contact' element={<Contact />} />
-					<Route path='/menu' element={<Menu />} />
-				</Routes>
+				<main
+					style={{
+						backgroundColor: '#e5d2c0',
+						minHeight: '100vh',
+					}}
+				>
+					<NavBar />
+					<AnimatedRoutes />
+				</main>
 			</ThemeProvider>
 		</Router>
 	);
