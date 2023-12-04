@@ -7,14 +7,13 @@ import {
 	Typography,
 	useTheme,
 } from '@mui/material';
-// import Image from '../Images/home-img.png';
-
+import homeImg from './Images/home-img.png';
 const classes = {
 	container: {
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		backgroundImage: 'url(' + require('../Images/Other/background.png') + ')',
+		backgroundImage: 'url(' + require('./Images/Other/background.png') + ')',
 		backgroundSize: 'cover',
 		backgroundPosition: 'center',
 		paddingTop: { xs: '15%', sm: '10%', md: '1%' },
@@ -53,11 +52,7 @@ const Home = () => {
 			<Grid container spacing={4}>
 				<Grid item sm={12} md={6} sx={classes.gridImg}>
 					<Box justifyContent='center' margin={2}>
-						<img
-							src={'../Images/home-img.png'}
-							alt='landing-img'
-							style={classes.img}
-						/>
+						<img src={homeImg} alt='landing-img' style={classes.img} />
 					</Box>
 				</Grid>
 				<Grid item sm={12} md={6} sx={classes.gridText}>

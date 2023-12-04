@@ -10,7 +10,6 @@ import {
 	Paper,
 	FormLabel,
 } from '@mui/material';
-import Image from '../Images/Other/contact-bg.jpg';
 
 const classes = {
 	textBoxes: {
@@ -82,7 +81,7 @@ const Contact = () => {
 				alignItems: 'center',
 				justifyContent: 'center',
 				backgroundImage:
-					'url(' + require('../Images/Other/contact-bg.jpg') + ')',
+					'url(' + require('./Images/Other/contact-bg.jpg') + ')',
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
 				paddingTop: '1rem',

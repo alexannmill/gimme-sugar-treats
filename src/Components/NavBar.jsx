@@ -11,7 +11,7 @@ import {
 	Box,
 } from '@mui/material';
 import { Facebook, Instagram, List } from '@mui/icons-material';
-import Logo from '../Images/Other/reg-logo.png';
+import Logo from './Images/Other/reg-logo.png';
 
 //Due to MUI version makeStyle/useStyles with theme arg cannot be used. Need to import the theme for OO styling.
 import theme from '../Styles/theme';

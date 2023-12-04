@@ -12,7 +12,7 @@ function importAll(r) {
 
 // require all imported images
 const images = importAll(
-	require.context('../Images', false, /\.(png|jpe?g|svg)$/)
+	require.context('./Images', false, /\.(png|jpe?g|svg)$/)
 );
 
 const Gallery = () => {

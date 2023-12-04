@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import MenuImg from '../Images/Other/menu.jpeg';
+import MenuImg from './Images/Other/menu.jpeg';
 
 const Menu = () => {
 	return (
@@ -12,7 +12,7 @@ const Menu = () => {
 			// alignItems='center'
 			p='5%'
 			sx={{
-				backgroundImage: 'url(' + require('../Images/Other/wood-bg.jpg') + ')',
+				backgroundImage: 'url(' + require('./Images/Other/wood-bg.jpg') + ')',
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
 				backgroundAttachment: 'fixed',
