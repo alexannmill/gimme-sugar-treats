@@ -29,7 +29,7 @@ const AnimatedRoutes = () => {
 				}}
 			>
 				<Routes location={location}>
-					<Route path='/gimme-sugar-treats' element={<Home />} />
+					<Route path='/' element={<Home />} />
 					<Route path='/gallery' element={<Gallery />} />
 					<Route path='/contact' element={<Contact />} />
 					<Route path='/menu' element={<Menu />} />

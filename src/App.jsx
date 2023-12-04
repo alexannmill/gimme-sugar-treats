@@ -7,7 +7,7 @@ import AnimatedRoutes from './Context/AnimatedRoutes';
 
 const App = () => {
 	return (
-		<Router>
+		<Router basename=''>
 			<ThemeProvider theme={theme}>
 				<main
 					style={{
