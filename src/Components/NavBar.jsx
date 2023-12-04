@@ -53,7 +53,7 @@ const NavBar = () => {
 			onClose={handleMenuClose}
 			slotProps={{ paper: { style: classes.menuDropDown } }}
 		>
-			<MenuItem component={Link} to='/gimme-sugar-treats'>
+			<MenuItem component={Link} to='/'>
 				HOME
 			</MenuItem>
 			<MenuItem component={Link} to='/menu'>
@@ -100,7 +100,7 @@ const NavBar = () => {
 				</IconButton>
 				{renderMenu}
 				<Box sx={{ display: { xs: 'none', md: 'block' } }}>
-					<Button color='inherit' component={Link} to='/gimme-sugar-treats'>
+					<Button color='inherit' component={Link} to='/'>
 						Home
 					</Button>
 					<Button color='inherit' component={Link} to='/menu'>
