@@ -3,8 +3,8 @@
 /node_modules
 /.pnp
 .pnp.js
-/src/Images
-
+/src/components/Images
+/public/Images
 
 # testing
 /coverage
