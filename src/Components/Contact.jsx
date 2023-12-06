@@ -30,43 +30,78 @@ const Contact = () => {
 	const [submitted, setSubmitted] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
+	const [errorMsg, setErrorMsg] = useState({});
+
+	const validateFormData = () => {
+		setError(false);
+		let formErrors = {};
+		if (!formData.name) {
+			formErrors.name = 'Please enter your name';
+		} else if (!formData.message) {
+			formErrors.message = 'Please enter a message';
+		} else if (!formData.email) {
+			formErrors.email = 'Please enter an email address';
+		} else if (
+			!formData.email.match(
+				/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+			)
+		) {
+			formErrors.email = 'Please enter a valid email address';
+		}
+		console.log(
+			'Object.keys(formErrors).length > 0:',
+			Object.keys(formErrors).length > 0
+		);
+		setErrorMsg({ ...formErrors });
+		if (Object.keys(formErrors).length > 0) {
+			setError(true);
+			return false;
+		} else {
+			setError(false);
+			return true;
+		}
+	};
 
 	const sendEmail = (e) => {
 		e.preventDefault();
 		setLoading(true);
-		setSubmitted(false);
-
-		fetch(process.env.EMAIL_ENDPOINT, {
-			method: 'POST',
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(formData),
-		})
-			.then((response) => {
-				if (response.status === 200) {
-					setSubmitted(true);
-					setLoading(false);
-				} else {
-					setLoading(false);
-					setError(
-						'Unable to send your message, please ensure all the fields are filled out correctly'
-					);
-				}
+		const valid = validateFormData();
+		if (valid) {
+			fetch(process.env.EMAIL_ENDPOINT, {
+				method: 'POST',
+				headers: {
+					Accept: 'application/json',
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
 			})
-			.catch((err) => {
-				setError(err.toString());
-				setLoading(false);
-			});
+				.then((response) => {
+					if (response.status === 200) {
+						setSubmitted(true);
+						setLoading(false);
+					} else {
+						setLoading(false);
+						setError(true);
+						setErrorMsg({
+							return:
+								'Unable to send your message, please ensure all the fields are filled out correctly',
+						});
+					}
+				})
+				.catch((err) => {
+					setError(err.toString());
+					setLoading(false);
+				});
+		}
+		setLoading(false);
 	};
+
 	const handleChange = (e) => {
 		setFormData({
 			...formData,
 			[e.target.name]: e.target.value,
 		});
 	};
-
 	return (
 		<Box
 			sx={{
@@ -100,13 +135,13 @@ const Contact = () => {
 				</Grid>
 				<Grid item xs={12} sm={6}>
 					{!submitted ? (
-						<Box>
+						<FormControl>
 							{loading ? (
 								<Box p={3} textAlign='center'>
 									<CircularProgress size='8rem' color='primary' thickness={6} />
 								</Box>
 							) : (
-								<>
+								<form>
 									<FormLabel style={classes.textBoxes}>Name</FormLabel>
 									<TextField
 										variant='outlined'
@@ -117,6 +152,8 @@ const Contact = () => {
 										margin='normal'
 										required
 										inputProps={{ style: classes.textBoxes }}
+										error={error && errorMsg.name}
+										helperText={error && errorMsg.name}
 									/>
 									<br />
 									<FormLabel style={classes.textBoxes}>Email</FormLabel>
@@ -129,6 +166,8 @@ const Contact = () => {
 										fullWidth
 										margin='normal'
 										required
+										error={error && errorMsg.email}
+										helperText={error && errorMsg.email}
 									/>
 									<br />
 									<FormLabel style={classes.textBoxes}>Message</FormLabel>
@@ -138,11 +177,30 @@ const Contact = () => {
 										onChange={handleChange}
 										fullWidth
 										margin='normal'
+										required
 										multiline
 										rows={4}
-										required
 										inputProps={{ style: classes.textBoxes }}
+										error={error && errorMsg.message}
+										helperText={error && errorMsg.message}
 									/>
+									{/* handle bots */}
+									<div
+										style={{
+											textIndent: '-99999px',
+											whiteSpace: 'nowrap',
+											overflow: 'hidden',
+											position: 'absolute',
+										}}
+										aria-hidden='true'
+									>
+										<input
+											type='text'
+											name='_gotcha'
+											tabIndex='-1'
+											autocomplete='off'
+										/>
+									</div>
 									<Box textAlign='right'>
 										<Button
 											onClick={(e) => sendEmail(e)}
@@ -152,14 +210,16 @@ const Contact = () => {
 											Submit
 										</Button>
 									</Box>
-									{error && <Alert severity='error'>{error}</Alert>}
-								</>
+									{error && errorMsg.return && (
+										<Alert severity='error'>{errorMsg.return}</Alert>
+									)}
+								</form>
 							)}
-						</Box>
+						</FormControl>
 					) : (
 						<Box p={3} bgcolor='lightgrey' borderRadius={3}>
 							<Typography align='center' variant='h4'>
-								Your message has been sent!🎉
+								Thank you, your message has been sent!🎉
 							</Typography>
 						</Box>
 					)}
