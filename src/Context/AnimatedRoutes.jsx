@@ -29,10 +29,10 @@ const AnimatedRoutes = () => {
 				}}
 			>
 				<Routes location={location}>
-					<Route path='/' element={<Home />} />
-					<Route path='/gallery' element={<Gallery />} />
-					<Route path='/contact' element={<Contact />} />
-					<Route path='/menu' element={<Menu />} />
+					<Route path='/gimme-sugar-treats' element={<Home />} />
+					<Route path='/gimme-sugar-treats/gallery' element={<Gallery />} />
+					<Route path='/gimme-sugar-treats/contact' element={<Contact />} />
+					<Route path='/gimme-sugar-treats/menu' element={<Menu />} />
 				</Routes>
 			</motion.div>
 		</AnimatePresence>

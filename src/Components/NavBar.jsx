@@ -53,16 +53,16 @@ const NavBar = () => {
 			onClose={handleMenuClose}
 			slotProps={{ paper: { style: classes.menuDropDown } }}
 		>
-			<MenuItem component={Link} to='/'>
+			<MenuItem component={Link} to='/gimme-sugar-treats'>
 				HOME
 			</MenuItem>
-			<MenuItem component={Link} to='/menu'>
+			<MenuItem component={Link} to='/gimme-sugar-treats/menu'>
 				MENU
 			</MenuItem>
-			<MenuItem component={Link} to='/gallery'>
+			<MenuItem component={Link} to='/gimme-sugar-treats/gallery'>
 				GALLERY
 			</MenuItem>
-			<MenuItem component={Link} to='/contact'>
+			<MenuItem component={Link} to='/gimme-sugar-treats/contact'>
 				CONTACT
 			</MenuItem>
 			<MenuItem
@@ -100,16 +100,28 @@ const NavBar = () => {
 				</IconButton>
 				{renderMenu}
 				<Box sx={{ display: { xs: 'none', md: 'block' } }}>
-					<Button color='inherit' component={Link} to='/'>
+					<Button color='inherit' component={Link} to='/gimme-sugar-treats'>
 						Home
 					</Button>
-					<Button color='inherit' component={Link} to='/menu'>
+					<Button
+						color='inherit'
+						component={Link}
+						to='/gimme-sugar-treats/menu'
+					>
 						Menu
 					</Button>
-					<Button color='inherit' component={Link} to='/gallery'>
+					<Button
+						color='inherit'
+						component={Link}
+						to='/gimme-sugar-treats/gallery'
+					>
 						Gallery
 					</Button>
-					<Button color='inherit' component={Link} to='/contact'>
+					<Button
+						color='inherit'
+						component={Link}
+						to='/gimme-sugar-treats/contact'
+					>
 						Contact
 					</Button>
 					<Button
