@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Box, ImageList, ImageListItem, Typography } from '@mui/material';
 
+
+
+const classes = {
+	images: {
+		borderRadius: '1rem',
+		boxShadow: '0 0 2px 1px #9d8981',
+	},
+};
 // import all images in Images directory
 function importAll(r) {
 	let images = {};
@@ -14,6 +22,7 @@ function importAll(r) {
 const images = importAll(
 	require.context('./Images', false, /\.(png|jpe?g|svg)$/)
 );
+
 
 const Gallery = () => {
 	const [numberOfColumns, setNumberOfColumns] = useState(2);
@@ -55,10 +64,7 @@ const Gallery = () => {
 							src={`${item.img}?w=164&fit=crop&auto=format`}
 							alt={item.title}
 							loading='lazy'
-							style={{
-								borderRadius: '1rem',
-								boxShadow: '0 0 2px 1px #9d8981',
-							}}
+							style={classes.images}
 						/>
 					</ImageListItem>
 				))}

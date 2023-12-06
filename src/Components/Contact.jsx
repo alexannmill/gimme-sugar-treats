@@ -20,6 +20,25 @@ const classes = {
 	textField: {
 		backgroundColor: '#e7e4e4',
 	},
+	background: {
+		alignItems: 'center',
+		justifyContent: 'center',
+		backgroundImage: 'url(' + require('./Images/Other/contact-bg.jpg') + ')',
+		backgroundSize: 'cover',
+		backgroundPosition: 'center',
+		paddingTop: '1rem',
+		backgroundAttachment: 'fixed',
+		backgroundRepeat: 'no-repeat',
+		height: 'inherit',
+		minHeight: '100vh',
+		padding: '5%',
+	},
+	botBlock: {
+		textIndent: '-99999px',
+		whiteSpace: 'nowrap',
+		overflow: 'hidden',
+		position: 'absolute',
+	},
 };
 const Contact = () => {
 	const [formData, setFormData] = useState({
@@ -103,22 +122,7 @@ const Contact = () => {
 		});
 	};
 	return (
-		<Box
-			sx={{
-				alignItems: 'center',
-				justifyContent: 'center',
-				backgroundImage:
-					'url(' + require('./Images/Other/contact-bg.jpg') + ')',
-				backgroundSize: 'cover',
-				backgroundPosition: 'center',
-				paddingTop: '1rem',
-				backgroundAttachment: 'fixed',
-				backgroundRepeat: 'no-repeat',
-				height: 'inherit',
-				minHeight: '100vh',
-				padding: '5%',
-			}}
-		>
+		<Box sx={classes.background}>
 			<Typography variant='h1' color='white'>
 				Contact
 			</Typography>
@@ -185,15 +189,7 @@ const Contact = () => {
 										helperText={error && errorMsg.message}
 									/>
 									{/* handle bots */}
-									<div
-										style={{
-											textIndent: '-99999px',
-											whiteSpace: 'nowrap',
-											overflow: 'hidden',
-											position: 'absolute',
-										}}
-										aria-hidden='true'
-									>
+									<div style={classes.botBlock} aria-hidden='true'>
 										<input
 											type='text'
 											name='_gotcha'

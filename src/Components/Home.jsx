@@ -61,10 +61,10 @@ const Home = () => {
 							Hi Friends!
 						</Typography>
 						<Typography variant='h6' color='secondary.dark'>
-							Wanted to start off with a bit about myself…I am a Cordon Bleu
+							Wanted to start off with a bit about myself… I am a Cordon Bleu
 							trained Pastry Chef recently turned Mom. I have a passion for
 							hiking, music and food; yet Baking has always been my biggest
-							love. ❤️ I am excited for this adventure and bringing you all for
+							love. 💝 I am excited for this adventure and bringing you all for
 							the ride! 💕
 							<br />
 							<br />
