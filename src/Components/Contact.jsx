@@ -9,6 +9,8 @@ import {
 	Grid,
 	Paper,
 	FormLabel,
+	CircularProgress,
+	Alert,
 } from '@mui/material';
 
 const classes = {
@@ -27,45 +29,71 @@ const Contact = () => {
 	});
 	const [submitted, setSubmitted] = useState(false);
 	const [loading, setLoading] = useState(false);
-	const [error, setError] = useState();
+	const [error, setError] = useState(false);
+	const [errorMsg, setErrorMsg] = useState({});
 
-	const sendEmail = () => {
+	const validateFormData = () => {
+		setError(false);
+		let formErrors = {};
+		if (!formData.name) {
+			formErrors.name = 'Please enter your name';
+		} else if (!formData.message) {
+			formErrors.message = 'Please enter a message';
+		} else if (!formData.email) {
+			formErrors.email = 'Please enter an email address';
+		} else if (
+			!formData.email.match(
+				/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+			)
+		) {
+			formErrors.email = 'Please enter a valid email address';
+		}
+		console.log(
+			'Object.keys(formErrors).length > 0:',
+			Object.keys(formErrors).length > 0
+		);
+		setErrorMsg({ ...formErrors });
+		if (Object.keys(formErrors).length > 0) {
+			setError(true);
+			return false;
+		} else {
+			setError(false);
+			return true;
+		}
+	};
+
+	const sendEmail = (e) => {
+		e.preventDefault();
 		setLoading(true);
-		setSubmitted(false);
-
-		fetch(
-			'https://public.herotofu.com/v1/ca7790a0-7e6a-11ed-b38f-a1ed22f366b1',
-			{
+		const valid = validateFormData();
+		if (valid) {
+			fetch(process.env.EMAIL_ENDPOINT, {
 				method: 'POST',
 				headers: {
 					Accept: 'application/json',
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify(formData),
-			}
-		)
-			.then((response) => {
-				// Endpoint thinks that it's likely a spam/bot request, you need to change "spam protection mode" to "never" in HeroTofu forms
-				if (response.status === 422) {
-					setError('Are you robot?');
-					throw new Error('Are you robot?');
-				}
-
-				if (response.status !== 200) {
-					setError(`${response.statusText} (${response.status})`);
-					throw new Error(`${response.statusText} (${response.status})`);
-				}
-
-				return response.json();
 			})
-			.then(() => {
-				setSubmitted(true);
-				setLoading(false);
-			})
-			.catch((err) => {
-				setError(err.toString());
-				setLoading(false);
-			});
+				.then((response) => {
+					if (response.status === 200) {
+						setSubmitted(true);
+						setLoading(false);
+					} else {
+						setLoading(false);
+						setError(true);
+						setErrorMsg({
+							return:
+								'Unable to send your message, please ensure all the fields are filled out correctly',
+						});
+					}
+				})
+				.catch((err) => {
+					setError(err.toString());
+					setLoading(false);
+				});
+		}
+		setLoading(false);
 	};
 
 	const handleChange = (e) => {
@@ -74,7 +102,6 @@ const Contact = () => {
 			[e.target.name]: e.target.value,
 		});
 	};
-
 	return (
 		<Box
 			sx={{
@@ -107,50 +134,95 @@ const Contact = () => {
 					</Typography>
 				</Grid>
 				<Grid item xs={12} sm={6}>
-					<form onSubmit={sendEmail} method='POST'>
-						<FormLabel style={classes.textBoxes}>Name</FormLabel>
-						<TextField
-							variant='outlined'
-							name='name'
-							value={formData.name}
-							onChange={handleChange}
-							fullWidth
-							margin='normal'
-							required
-							className={classes.textField}
-							inputProps={{ style: classes.textBoxes }}
-						/>
-						<br />
-						<FormLabel style={classes.textBoxes}>Email</FormLabel>
-						<TextField
-							name='email'
-							type='email'
-							inputProps={{ type: 'email', style: classes.textBoxes }}
-							value={formData.email}
-							onChange={handleChange}
-							fullWidth
-							margin='normal'
-							required
-						/>
-						<br />
-						<FormLabel style={classes.textBoxes}>Message</FormLabel>
-						<TextField
-							name='message'
-							value={formData.message}
-							onChange={handleChange}
-							fullWidth
-							margin='normal'
-							multiline
-							rows={4}
-							required
-							inputProps={{ style: classes.textBoxes }}
-						/>
-						<Box textAlign='right'>
-							<Button type='submit' variant='contained' color='primary'>
-								Submit
-							</Button>
+					{!submitted ? (
+						<FormControl>
+							{loading ? (
+								<Box p={3} textAlign='center'>
+									<CircularProgress size='8rem' color='primary' thickness={6} />
+								</Box>
+							) : (
+								<form>
+									<FormLabel style={classes.textBoxes}>Name</FormLabel>
+									<TextField
+										variant='outlined'
+										name='name'
+										value={formData.name}
+										onChange={handleChange}
+										fullWidth
+										margin='normal'
+										required
+										inputProps={{ style: classes.textBoxes }}
+										error={error && errorMsg.name}
+										helperText={error && errorMsg.name}
+									/>
+									<br />
+									<FormLabel style={classes.textBoxes}>Email</FormLabel>
+									<TextField
+										name='email'
+										type='email'
+										inputProps={{ type: 'email', style: classes.textBoxes }}
+										value={formData.email}
+										onChange={handleChange}
+										fullWidth
+										margin='normal'
+										required
+										error={error && errorMsg.email}
+										helperText={error && errorMsg.email}
+									/>
+									<br />
+									<FormLabel style={classes.textBoxes}>Message</FormLabel>
+									<TextField
+										name='message'
+										value={formData.message}
+										onChange={handleChange}
+										fullWidth
+										margin='normal'
+										required
+										multiline
+										rows={4}
+										inputProps={{ style: classes.textBoxes }}
+										error={error && errorMsg.message}
+										helperText={error && errorMsg.message}
+									/>
+									{/* handle bots */}
+									<div
+										style={{
+											textIndent: '-99999px',
+											whiteSpace: 'nowrap',
+											overflow: 'hidden',
+											position: 'absolute',
+										}}
+										aria-hidden='true'
+									>
+										<input
+											type='text'
+											name='_gotcha'
+											tabIndex='-1'
+											autocomplete='off'
+										/>
+									</div>
+									<Box textAlign='right'>
+										<Button
+											onClick={(e) => sendEmail(e)}
+											variant='contained'
+											color='primary'
+										>
+											Submit
+										</Button>
+									</Box>
+									{error && errorMsg.return && (
+										<Alert severity='error'>{errorMsg.return}</Alert>
+									)}
+								</form>
+							)}
+						</FormControl>
+					) : (
+						<Box p={3} bgcolor='lightgrey' borderRadius={3}>
+							<Typography align='center' variant='h4'>
+								Thank you, your message has been sent!🎉
+							</Typography>
 						</Box>
-					</form>
+					)}
 				</Grid>
 			</Grid>
 		</Box>
