@@ -9,6 +9,7 @@ import Home from '../Components/Home';
 import Contact from '../Components/Contact';
 import Menu from '../Components/Menu';
 import Gallery from '../Components/Gallery';
+import About from '../Components/About';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const AnimatedRoutes = () => {
@@ -33,6 +34,7 @@ const AnimatedRoutes = () => {
 					<Route path='/gimme-sugar-treats/gallery' element={<Gallery />} />
 					<Route path='/gimme-sugar-treats/contact' element={<Contact />} />
 					<Route path='/gimme-sugar-treats/menu' element={<Menu />} />
+					<Route path='/gimme-sugar-treats/about' element={<About />} />
 				</Routes>
 			</motion.div>
 		</AnimatePresence>

@@ -56,6 +56,9 @@ const NavBar = () => {
 			<MenuItem component={Link} to='/gimme-sugar-treats'>
 				HOME
 			</MenuItem>
+			<MenuItem component={Link} to='/gimme-sugar-treats/about'>
+				ABOUT
+			</MenuItem>
 			<MenuItem component={Link} to='/gimme-sugar-treats/menu'>
 				MENU
 			</MenuItem>
@@ -101,28 +104,35 @@ const NavBar = () => {
 				{renderMenu}
 				<Box sx={{ display: { xs: 'none', md: 'block' } }}>
 					<Button color='inherit' component={Link} to='/gimme-sugar-treats'>
-						Home
+						HOME
+					</Button>
+					<Button
+						color='inherit'
+						component={Link}
+						to='/gimme-sugar-treats/about'
+					>
+						ABOUT
 					</Button>
 					<Button
 						color='inherit'
 						component={Link}
 						to='/gimme-sugar-treats/menu'
 					>
-						Menu
+						MENU
 					</Button>
 					<Button
 						color='inherit'
 						component={Link}
 						to='/gimme-sugar-treats/gallery'
 					>
-						Gallery
+						GALLERY
 					</Button>
 					<Button
 						color='inherit'
 						component={Link}
 						to='/gimme-sugar-treats/contact'
 					>
-						Contact
+						CONTACT
 					</Button>
 					<Button
 						color='inherit'
