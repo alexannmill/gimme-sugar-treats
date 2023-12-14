@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/gimme-sugar-treats/static/js/main.b6283e34.js",
+    "main.js": "/gimme-sugar-treats/static/js/main.25d3ace1.js",
     "static/js/787.a5ae3d6c.chunk.js": "/gimme-sugar-treats/static/js/787.a5ae3d6c.chunk.js",
     "static/media/wood-bg.jpg": "/gimme-sugar-treats/static/media/wood-bg.de6b3c627f98f9e1ec00.jpg",
     "static/media/Screenshot 2023-11-03 at 7.12.06 PM.png": "/gimme-sugar-treats/static/media/Screenshot 2023-11-03 at 7.12.06 PM.de400bec5e99c8306de5.png",
@@ -24,10 +24,10 @@
     "static/media/contact-bg.jpg": "/gimme-sugar-treats/static/media/contact-bg.8d3f5ab7e9f6d935e2b4.jpg",
     "static/media/reg-logo.png": "/gimme-sugar-treats/static/media/reg-logo.4f655a197582158764ec.png",
     "index.html": "/gimme-sugar-treats/index.html",
-    "main.b6283e34.js.map": "/gimme-sugar-treats/static/js/main.b6283e34.js.map",
+    "main.25d3ace1.js.map": "/gimme-sugar-treats/static/js/main.25d3ace1.js.map",
     "787.a5ae3d6c.chunk.js.map": "/gimme-sugar-treats/static/js/787.a5ae3d6c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.b6283e34.js"
+    "static/js/main.25d3ace1.js"
   ]
 }
