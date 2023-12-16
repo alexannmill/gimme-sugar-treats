@@ -25,7 +25,7 @@ const images = importAll(
 
 
 const Gallery = () => {
-	const [numberOfColumns, setNumberOfColumns] = useState(2);
+	const [numberOfColumns, setNumberOfColumns] = useState(3);
 
 	const handleResize = () => {
 		const screenSize = window.screen.width;
@@ -36,7 +36,9 @@ const Gallery = () => {
 		setNumberOfColumns(numColumns);
 	};
 
+
 	useEffect(() => {
+		handleResize();
 		// event listener for window resize
 		window.addEventListener('resize', handleResize);
 
