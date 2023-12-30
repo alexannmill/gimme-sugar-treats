@@ -18,7 +18,7 @@ const AnimatedRoutes = () => {
 	return (
 		<AnimatePresence mode='wait'>
 			<motion.div
-				key={location.pathname}
+				// key={location.pathname}
 				initial={{ translateY: '100%' }}
 				animate={{
 					translateY: '0%',
@@ -30,11 +30,11 @@ const AnimatedRoutes = () => {
 				}}
 			>
 				<Routes location={location}>
-					<Route path='/gimme-sugar-treats' element={<Home />} />
-					<Route path='/gimme-sugar-treats/gallery' element={<Gallery />} />
-					<Route path='/gimme-sugar-treats/contact' element={<Contact />} />
-					<Route path='/gimme-sugar-treats/menu' element={<Menu />} />
-					<Route path='/gimme-sugar-treats/about' element={<About />} />
+					<Route path='/' element={<Home />} />
+					<Route path='/gallery' element={<Gallery />} />
+					<Route path='/contact' element={<Contact />} />
+					<Route path='/menu' element={<Menu />} />
+					<Route path='/about' element={<About />} />
 				</Routes>
 			</motion.div>
 		</AnimatePresence>
