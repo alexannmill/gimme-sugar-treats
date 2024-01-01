@@ -4,6 +4,7 @@
 /.pnp
 .pnp.js
 /src/Components/Images
+/public/Images
 
 
 # testing

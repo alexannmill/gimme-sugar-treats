@@ -30,7 +30,7 @@ const classes = {
 		backgroundAttachment: 'fixed',
 		backgroundRepeat: 'no-repeat',
 		height: 'inherit',
-		minHeight: '100vh',
+		minHeight: '80vh',
 		padding: '5%',
 	},
 	botBlock: {
@@ -139,7 +139,7 @@ const Contact = () => {
 				</Grid>
 				<Grid item xs={12} sm={6}>
 					{!submitted ? (
-						<FormControl>
+						<Box>
 							{loading ? (
 								<Box p={3} textAlign='center'>
 									<CircularProgress size='8rem' color='primary' thickness={6} />
@@ -211,7 +211,7 @@ const Contact = () => {
 									)}
 								</form>
 							)}
-						</FormControl>
+						</Box>
 					) : (
 						<Box p={3} bgcolor='lightgrey' borderRadius={3}>
 							<Typography align='center' variant='h4'>
