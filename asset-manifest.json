@@ -1,8 +1,7 @@
 {
   "files": {
-    "main.js": "/static/js/main.5f98b4a9.js",
+    "main.js": "/static/js/main.1317e65e.js",
     "static/js/787.a5ae3d6c.chunk.js": "/static/js/787.a5ae3d6c.chunk.js",
-    "static/media/wood-bg.jpg": "/static/media/wood-bg.de6b3c627f98f9e1ec00.jpg",
     "static/media/Screenshot 2023-11-03 at 7.12.06 PM.png": "/static/media/Screenshot 2023-11-03 at 7.12.06 PM.de400bec5e99c8306de5.png",
     "static/media/cookie-dough.png": "/static/media/cookie-dough.cf98a179fdc088707569.png",
     "static/media/zScreenshot 2023-11-03 at 7.12.15 PM.png": "/static/media/zScreenshot 2023-11-03 at 7.12.15 PM.4a63b2fb7fc3907cc5d3.png",
@@ -13,7 +12,6 @@
     "static/media/cracked-crem.png": "/static/media/cracked-crem.50e63773cab7716d62c2.png",
     "static/media/creme.png": "/static/media/creme.1bc34db86aaba3dac791.png",
     "static/media/colour-prot.png": "/static/media/colour-prot.e5adec44911d65768826.png",
-    "static/media/menu.jpeg": "/static/media/menu.a933e18fcb8553bd698a.jpeg",
     "static/media/Screenshot 2023-11-03 at 7.11.57 PM.png": "/static/media/Screenshot 2023-11-03 at 7.11.57 PM.50eeccd5598ab5747a19.png",
     "static/media/3Screenshot 2023-11-03 at 7.12.25 PM.png": "/static/media/3Screenshot 2023-11-03 at 7.12.25 PM.c5abc9ec4f518eb6f3ee.png",
     "static/media/gScreenshot 2023-11-03 at 7.12.41 PM.png": "/static/media/gScreenshot 2023-11-03 at 7.12.41 PM.eb218a95143683f9c58e.png",
@@ -21,13 +19,14 @@
     "static/media/Screenshot 2023-11-03 at 7.12.32 PM.png": "/static/media/Screenshot 2023-11-03 at 7.12.32 PM.d598bdf66b4e9068da28.png",
     "static/media/Screenshot 2023-11-03 at 7.12.50 PM.png": "/static/media/Screenshot 2023-11-03 at 7.12.50 PM.fc7fad6f16ff18a08844.png",
     "static/media/Screenshot 2023-11-03 at 7.13.24 PM.png": "/static/media/Screenshot 2023-11-03 at 7.13.24 PM.7a708694f9d8d031b679.png",
+    "static/media/menu.jpg": "/static/media/menu.b02c83bb977b46b5f69f.jpg",
     "static/media/contact-bg.jpg": "/static/media/contact-bg.8d3f5ab7e9f6d935e2b4.jpg",
     "static/media/reg-logo.png": "/static/media/reg-logo.4f655a197582158764ec.png",
     "index.html": "/index.html",
-    "main.5f98b4a9.js.map": "/static/js/main.5f98b4a9.js.map",
+    "main.1317e65e.js.map": "/static/js/main.1317e65e.js.map",
     "787.a5ae3d6c.chunk.js.map": "/static/js/787.a5ae3d6c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.5f98b4a9.js"
+    "static/js/main.1317e65e.js"
   ]
 }
