@@ -6,7 +6,7 @@ import MenuImg from './Images/Other/menu.jpg';
 
 const classes = {
 	background: {
-		backgroundImage: 'url(' + require('./Images/Other/wood-pannel.png') + ')',
+		backgroundImage: 'url(' + require('./Images/cinna.png') + ')',
 		backgroundSize: 'cover',
 		backgroundPosition: 'center',
 		backgroundAttachment: 'fixed',

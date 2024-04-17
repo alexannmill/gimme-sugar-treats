@@ -13,7 +13,8 @@ const classes = {
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		backgroundImage: 'url(' + require('./Images/Other/background.png') + ')',
+		// backgroundImage: 'url(' + require('./Images/Other/background.png') + ')',
+		backgroundImage: 'url(' + require('./Images/cinna.png') + ')',
 		backgroundSize: 'cover',
 		backgroundPosition: 'center',
 		paddingTop: { xs: '15%', sm: '10%', md: '1%' },
@@ -34,29 +35,35 @@ const classes = {
 	},
 	textContainer: {
 		justifyContent: 'center',
-		bgcolor: '#ebeae7c2',
-		borderRadius: '49% 51% 48% 52% / 52% 48% 51% 49%',
-		boxShadow: '0 0 20px 10px #9d8981',
+		// bgcolor: '#ebeae7c2',
+		// borderRadius: '59% 61% 58% 52% / 62% 58% 61% 59%',
+		// boxShadow: '0 0 20px 10px #9d8981',
 	},
 	img: {
 		width: '70%',
-		borderRadius: '1rem',
+		borderRadius: '2rem',
 		overflow: 'hidden',
-		boxShadow: '0 0 20px 10px #9d8981',
+		// boxShadow: '0 0 20px 10px #9d8981',
+		// borderRadius: '59% 61% 58% 52% / 62% 58% 61% 59%',
+	},
+	bubble: {
+		// borderRadius: '69% 61% 58% 62% / 62% 58% 61% 59%',
+		bgcolor: '#ebeae7c2',
+		// borderRadius: '2rem',
 	},
 };
 
 const About = () => {
 	return (
 		<Box sx={classes.container} id='home-container'>
-			<Grid container spacing={4}>
+			<Grid container spacing={2} sx={classes.bubble}>
 				<Grid item sm={12} md={6} sx={classes.gridImg}>
-					<Box justifyContent='center' margin={2}>
+					<Box justifyContent='center'>
 						<img src={homeImg} alt='landing-img' style={classes.img} />
 					</Box>
 				</Grid>
 				<Grid item sm={12} md={6} sx={classes.gridText}>
-					<Box p={3} sx={classes.textContainer}>
+					<Box p={1} sx={classes.textContainer}>
 						<Typography variant='h3' color='primary.dark' gutterBottom>
 							Hi Friends!
 						</Typography>

@@ -8,6 +8,13 @@ const classes = {
 		borderRadius: '1rem',
 		boxShadow: '0 0 2px 1px #9d8981',
 	},
+	bgImg: {
+		backgroundImage: 'url(' + require('./Images/Other/background.png') + ')',
+		backgroundSize: 'cover',
+		backgroundPosition: 'center',
+		backgroundAttachment: 'fixed',
+		backgroundRepeat: 'no-repeat',
+	},
 };
 // import all images in Images directory
 function importAll(r) {
@@ -23,7 +30,6 @@ const images = importAll(
 	require.context('./Images', false, /\.(png|jpe?g|svg)$/)
 );
 
-
 const Gallery = () => {
 	const [numberOfColumns, setNumberOfColumns] = useState(3);
 
@@ -35,7 +41,6 @@ const Gallery = () => {
 		const numColumns = screenDivide < 2 ? 2 : screenDivide;
 		setNumberOfColumns(numColumns);
 	};
-
 
 	useEffect(() => {
 		handleResize();
@@ -55,10 +60,10 @@ const Gallery = () => {
 	}));
 
 	return (
-		<Box p='5%'>
-			<Typography variant='h1' color='secondary' gutterBottom>
+		<Box p='5%' sx={classes.bgImg}>
+			{/* <Typography variant='h1' color='secondary' gutterBottom>
 				GALLERY
-			</Typography>
+			</Typography> */}
 			<ImageList variant='masonry' cols={numberOfColumns} gap={10}>
 				{itemData.map((item) => (
 					<ImageListItem key={item.img}>
