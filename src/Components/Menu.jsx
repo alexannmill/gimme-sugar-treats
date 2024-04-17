@@ -2,12 +2,11 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import MenuImg from './Images/Other/menu.jpeg';
-
+import MenuImg from './Images/Other/menu.jpg';
 
 const classes = {
 	background: {
-		backgroundImage: 'url(' + require('./Images/Other/wood-bg.jpg') + ')',
+		backgroundImage: 'url(' + require('./Images/Other/wood-pannel.png') + ')',
 		backgroundSize: 'cover',
 		backgroundPosition: 'center',
 		backgroundAttachment: 'fixed',
@@ -39,9 +38,9 @@ const Menu = () => {
 			p='5%'
 			sx={classes.background}
 		>
-			<Typography variant='h1' gutterBottom color='#f4d9ad'>
+			{/* <Typography variant='h1' gutterBottom color='#f4d9ad'>
 				CURRENT MENU
-			</Typography>
+			</Typography> */}
 			<div style={classes.imgContainer}>
 				<motion.img
 					src={MenuImg}
