@@ -79,10 +79,6 @@ const Contact = () => {
 		setLoading(true);
 		const valid = validateFormData();
 		if (valid) {
-			console.log(
-				'process.env.EMAIL_ENDPOINT:',
-				process.env.REACT_APP_EMAIL_ENDPOINT
-			);
 			fetch(process.env.REACT_APP_EMAIL_ENDPOINT, {
 				method: 'POST',
 				headers: {
@@ -92,7 +88,6 @@ const Contact = () => {
 				body: JSON.stringify(formData),
 			})
 				.then((response) => {
-					console.log('response:', response);
 					if (response.status === 200) {
 						setSubmitted(true);
 						setLoading(false);
