@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import {
-	Container,
 	Typography,
 	TextField,
 	Button,
 	Box,
-	FormControl,
 	Grid,
-	Paper,
 	FormLabel,
 	CircularProgress,
 	Alert,
@@ -67,10 +64,6 @@ const Contact = () => {
 		) {
 			formErrors.email = 'Please enter a valid email address';
 		}
-		console.log(
-			'Object.keys(formErrors).length > 0:',
-			Object.keys(formErrors).length > 0
-		);
 		setErrorMsg({ ...formErrors });
 		if (Object.keys(formErrors).length > 0) {
 			setError(true);
@@ -86,7 +79,11 @@ const Contact = () => {
 		setLoading(true);
 		const valid = validateFormData();
 		if (valid) {
-			fetch(process.env.EMAIL_ENDPOINT, {
+			console.log(
+				'process.env.EMAIL_ENDPOINT:',
+				process.env.REACT_APP_EMAIL_ENDPOINT
+			);
+			fetch(process.env.REACT_APP_EMAIL_ENDPOINT, {
 				method: 'POST',
 				headers: {
 					Accept: 'application/json',
@@ -95,6 +92,7 @@ const Contact = () => {
 				body: JSON.stringify(formData),
 			})
 				.then((response) => {
+					console.log('response:', response);
 					if (response.status === 200) {
 						setSubmitted(true);
 						setLoading(false);
@@ -102,8 +100,7 @@ const Contact = () => {
 						setLoading(false);
 						setError(true);
 						setErrorMsg({
-							return:
-								'Unable to send your message, please ensure all the fields are filled out correctly',
+							return: 'Unable to send your message',
 						});
 					}
 				})
@@ -194,7 +191,7 @@ const Contact = () => {
 											type='text'
 											name='_gotcha'
 											tabIndex='-1'
-											autocomplete='off'
+											autoComplete='off'
 										/>
 									</div>
 									<Box textAlign='right'>
